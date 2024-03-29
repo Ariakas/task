@@ -1,0 +1,109 @@
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Me5Q.ttf) format('truetype');
+}
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+  margin: 0;
+  font-family: Roboto, system-ui, sans-serif;
+}
+.wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  background: #C0DBD9;
+  padding-inline: 15px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+.button {
+  background: #A5C7F9;
+  color: #fff;
+  padding: 8px 15px 8px 15px;
+  border-radius: 5px;
+  font-size: 20px;
+  cursor: pointer;
+  display: inline-block;
+}
+header,
+footer {
+  background: #7FAFF6;
+  min-height: 100px;
+  padding: 30px;
+}
+#grid {
+  background: #B3F95A;
+  counter-reset: no;
+  display: grid;
+  gap: 15px;
+  grid-template-columns: 33.33333333fr 50.42735043fr 13.67521368fr;
+  grid-auto-rows: 198px;
+  margin-block: 15px;
+}
+#grid div {
+  background: #8AD191;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#grid div::after {
+  counter-increment: no;
+  content: counter(no);
+  color: #fff;
+  font-size: 53px;
+}
+#grid div:nth-child(4) {
+  grid-column-end: span 2;
+}
+#flex {
+  background: #88B5BF;
+  padding: 30px;
+  display: flex;
+  gap: 30px;
+  margin-block: 15px;
+}
+#flex div {
+  background: #0D89B0;
+  flex-basis: 255px;
+  aspect-ratio: 255 / 199;
+}
+footer {
+  margin-top: auto;
+}
+#popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.5);
+  display: flex;
+  visibility: hidden;
+}
+#popup:is(:target) {
+  visibility: visible;
+}
+#popup .center {
+  width: 400px;
+  height: 400px;
+  max-width: 100%;
+  max-height: 100dvh;
+  margin: auto;
+  background: #fff;
+  position: relative;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#popup .center .button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+#popup .center p {
+  font-size: 53px;
+}
+/*# sourceMappingURL=task.css.map */

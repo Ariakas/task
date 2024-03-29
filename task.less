@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+* {
+    box-sizing: border-box;
+    text-decoration: none;
+    margin: 0;
+    font-family: Roboto, system-ui, sans-serif;
+}
+.wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    background: #C0DBD9;
+    padding-inline: 15px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+}
+.button {
+    background: #A5C7F9;
+    color: #fff;
+    padding: 8px 15px 8px 15px;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    display: inline-block;
+}
+header, footer {
+    background: #7FAFF6;
+    min-height: 100px;
+    padding: 30px;
+}
+#grid {
+    background: #B3F95A;
+    counter-reset: no;
+    display: grid;
+    gap: 15px;
+    grid-template-columns: (1fr * 39000 / 1170) (1fr * 59000 / 1170) (1fr * 16000 / 1170);
+    grid-auto-rows: 198px;
+    margin-block: 15px;
+    div {
+        background: #8AD191;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &::after {
+            counter-increment: no;
+            content: counter(no);
+            color: #fff;
+            font-size: 53px;
+        }
+        &:nth-child(4) {
+            grid-column-end: span 2;
+        }
+    }
+}
+#flex {
+    background: #88B5BF;
+    padding: 30px;
+    display: flex;
+    gap: 30px;
+    margin-block: 15px;
+    div {
+        background: #0D89B0;
+        flex-basis: 255px;
+        aspect-ratio: 255 / 199;
+    }
+}
+footer {
+    margin-top: auto;
+}
+#popup {
+    position: fixed;
+    inset: 0;
+    background: fade(#fff, 50%);
+    display: flex;
+    visibility: hidden;
+    &:is(:target) {
+        visibility: visible;
+    }
+    .center {
+        width: 400px;
+        height: 400px;
+        max-width: 100%;
+        max-height: 100dvh;
+        margin: auto;
+        background: #fff;
+        position: relative;
+        padding: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .button {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+        p {
+            font-size: 53px;
+        }
+    }
+}
