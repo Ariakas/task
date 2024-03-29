@@ -45,6 +45,11 @@ footer {
   grid-auto-rows: 198px;
   margin-block: 15px;
 }
+@media screen and (max-width: 700px) {
+  #grid {
+    grid-template-columns: 1fr;
+  }
+}
 #grid div {
   background: #8AD191;
   display: flex;
@@ -60,12 +65,22 @@ footer {
 #grid div:nth-child(4) {
   grid-column-end: span 2;
 }
+@media screen and (max-width: 700px) {
+  #grid div:nth-child(4) {
+    grid-column-end: unset;
+  }
+}
 #flex {
   background: #88B5BF;
   padding: 30px;
   display: flex;
   gap: 30px;
   margin-block: 15px;
+}
+@media screen and (max-width: 700px) {
+  #flex {
+    flex-direction: column;
+  }
 }
 #flex div {
   background: #0D89B0;
